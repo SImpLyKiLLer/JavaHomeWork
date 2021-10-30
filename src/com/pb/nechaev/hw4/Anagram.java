@@ -31,7 +31,9 @@ public class Anagram {
         System.out.print("Введите вторую строку - ");
         String st2 = in.nextLine();
 
-        System.out.println(isAnagram(st1, st2));
+        if (isAnagram(st1, st2)) System.out.println("Это анаграмма");
+        else
+            System.out.println("Это не анаграмма");
 
     }
 }
