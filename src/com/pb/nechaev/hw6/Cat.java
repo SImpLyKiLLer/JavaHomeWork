@@ -1,5 +1,7 @@
 package com.pb.nechaev.hw6;
 
+import java.util.Objects;
+
 public class Cat extends  Animal{
 
     private int hight;
@@ -15,20 +17,23 @@ public class Cat extends  Animal{
     }
 
 
-    public String toString()
-    {
-        System.out.println("toString....");
-        return " ";
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cat cat = (Cat) o;
+        return hight == cat.hight;
     }
 
-    public void equals ()
-    {
-        System.out.println("equals.....");
+    @Override
+    public int hashCode() {
+        return Objects.hash(hight);
     }
 
-    public int hashCode()
-    {
-        System.out.println("hashCode...");
-        return 0;
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "hight=" + hight +
+                '}';
     }
 }
