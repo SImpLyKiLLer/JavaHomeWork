@@ -1,20 +1,31 @@
 package com.pb.nechaev.hw10;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
         int size = 4;
         NumBox<Integer> num = new NumBox<>(size);
+        List<Integer> tempNum = new ArrayList<>();
         try {
-            num.add(3);
+            num.add(5);
             num.add(15);
             num.add(10);
+            tempNum.add(1);
+            tempNum.add(2);
+            tempNum.add(3);
         } catch (Exception ex)
         {
             System.out.println(ex.getMessage());
         }
 
+        num.addAll(tempNum);
         System.out.println("----Integer---");
+
+        System.out.println("Первый элемент - " + num.get(0));
+
         System.out.println("Размер - " + num.length());
 
 
@@ -36,6 +47,8 @@ public class Main {
         {
             System.out.println(ex.getMessage());
         }
+
+        System.out.println("Первый элемент - " + num2.get(0));
 
         System.out.println("Размер - " + num2.length());
 
